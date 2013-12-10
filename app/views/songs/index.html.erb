@@ -1,5 +1,7 @@
 <h1>Listing songs</h1>
 
+<p> Total Songs: <%= @count %> </p>
+
 <table>
   <thead>
     <tr>
@@ -9,6 +11,7 @@
       <th>Prodyear</th>
       <th>Bpm</th>
       <th>Key</th>
+      <th>Relative</th>
       <th></th>
       <th></th>
       <th></th>
@@ -23,7 +26,8 @@
         <td><%= song.albumtitle %></td>
         <td><%= song.prodyear %></td>
         <td><%= song.bpm %></td>
-        <td><%= song.key %></td>
+        <td><%= song.scale %></td>
+        <td><%= song.scale_rel %></td>
         <td><%= link_to 'Show', song %></td>
         <td><%= link_to 'Edit', edit_song_path(song) %></td>
         <td><%= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -34,4 +38,6 @@
 
 <br>
 
-<%= link_to 'New Song', new_song_path %>
+<h1>New song</h1>
+
+<%= render 'form' %>

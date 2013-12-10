@@ -27,8 +27,20 @@
 
 <p>
   <strong>Key:</strong>
-  <%= @song.key %>
+  <%= @song.scale %>
 </p>
+
+<p>
+  <strong>Relative:</strong>
+  <%= @song.scale_rel %>
+</p>
+
+<p>
+  <% if @song.bpm > 100 %>
+  Fast song
+  <% else %>
+  Slow song
+  <% end %>
 
 <%= link_to 'Edit', edit_song_path(@song) %> |
 <%= link_to 'Back', songs_path %>
